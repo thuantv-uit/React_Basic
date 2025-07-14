@@ -71,3 +71,35 @@ Webpack in React is a static module bundler that takes all the individual JavaSc
 Babel is a JavaScript compiler, or more accurately, a transpiler, that plays a crucial role in React development. Its primary function is to transform modern JavaScript code, including JSX (JavaScript XML) syntax used in React, into an older, more widely supported version of JavaScript (typically ES5).   
       
 ![src](public/src.png)  
+
+## 3. Components and JSX
+1. In React, a single file can contain multiple functions, which must be imported into other components or files to be used. Alternatively, you can extract these functions into a separate file and import that file into the main file to access and utilize them. For example:
+```bash
+// utils.js
+export function func1() { ... }
+export function func2() { ... }
+
+// App.js
+import { func1, func2 } from './utils';
+```
+
+2. **import func1**: Used for **default imports**. The exported module is a single default export, and you can name it anything when importing.
+```bash
+// utils.js
+export default function func1() { ... }
+
+// App.js
+import func1 from './utils'; // No braces, name can be anything
+```
+
+3. **import { func1 }**: Used for **named imports**. The function is exported as a named export, and you must import it with the exact name in braces
+```bash
+// utils.js
+export function func1() { ... }
+
+// App.js
+import { func1 } from './utils'; // Must use exact name in braces
+```
+**Key difference**: Default import allows flexible naming; named import requires the exact exported name. Thanks!
+
+4. JSX, or JavaScript XML, is a syntax extension for JavaScript that is commonly used with the React library for building user interfaces. It allows developers to write HTML-like code directly within their JavaScript files. 

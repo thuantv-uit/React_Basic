@@ -1,10 +1,23 @@
-import './App.css';
+import "./App.css";
+import Info from "./Info";
 
 function App() {
   return (
     <div className="App">
-      <p>Tran Van Thuan</p>
+      <Info />
+      <AddItem />
     </div>
+  );
+}
+
+function AddItem() {
+  const value = "default value";
+
+  return (
+    <form>
+      <label for="text-form">Type something: </label>
+      <input type="text" value={value} id="text-form" />
+    </form>
   );
 }
 
