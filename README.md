@@ -46,6 +46,7 @@ In a React application, particularly one created with tools like Create React Ap
 This JSON file provides metadata about your web application, primarily for Progressive Web App (PWA) features. It allows the browser to present your web application to the user in a way that feels more like a native application.
 
 3. Contains some images for the project
+![public](public/public.png)
 
 
 ### src
@@ -66,4 +67,5 @@ In the context of a React project, "Node modules" primarily refers to the **node
 
 6. Webpack and Babel
 Webpack in React is a static module bundler that takes all the individual JavaScript files (including React components) and other assets like CSS, images, and fonts, and bundles them into a single file or a few optimized files for deployment.      
-Babel is a JavaScript compiler, or more accurately, a transpiler, that plays a crucial role in React development. Its primary function is to transform modern JavaScript code, including JSX (JavaScript XML) syntax used in React, into an older, more widely supported version of JavaScript (typically ES5).     
+Babel is a JavaScript compiler, or more accurately, a transpiler, that plays a crucial role in React development. Its primary function is to transform modern JavaScript code, including JSX (JavaScript XML) syntax used in React, into an older, more widely supported version of JavaScript (typically ES5).   
+![src](public/src.png)  
