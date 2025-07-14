@@ -1,8 +1,8 @@
 # REACT BASIC
 
 ## Information
-Author: Thuan Tran Van.     
-Date Created: July 14 2025.
+Author: Thuan Tran Van     
+Date Created: July 14 2025
 
 ## 1. Intruction and Environment
 ### Topics
@@ -103,3 +103,32 @@ import { func1 } from './utils'; // Must use exact name in braces
 **Key difference**: Default import allows flexible naming; named import requires the exact exported name. Thanks!
 
 4. JSX, or JavaScript XML, is a syntax extension for JavaScript that is commonly used with the React library for building user interfaces. It allows developers to write HTML-like code directly within their JavaScript files. 
+
+## 4. Props
+1. Props in React are used to pass data from a parent component to a child component, enabling dynamic and reusable components.   
+Example:
+```bash
+// Parent.js
+function Parent() {
+  return <Child name="John" />;
+}
+
+// Child.js
+function Child(props) {
+  return <p>Hello, {props.name}!</p>;
+}
+```
+
+2. **PropTypes** is a package in React used for type-checking props in components, ensuring they receive the correct data types and required props during development.
+```bash
+import PropTypes from 'prop-types';
+
+function Child({ name, age }) {
+  return <p>{name}, {age}</p>;
+}
+
+Child.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+};
+```
