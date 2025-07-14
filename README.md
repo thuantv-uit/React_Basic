@@ -1,7 +1,7 @@
 # REACT BASIC
 
 ## Information
-Author: Thuan Tran Van
+Author: Thuan Tran Van \
 Date Created: July 14 2025
 
 ## 1. Intruction and Environment
@@ -21,17 +21,17 @@ Date Created: July 14 2025
 
 ### Install
 1. Create a repo of the React
-`
+```bash
 npx create-react-app my-repo
-`
+```
 2. Move into folder
-`
+```bash
 cd my-repo
-`
+```
 3. Run project with yarn or npm
-`
-yarn star or npm start
-`
+```bash
+yarn start or npm start
+```
 4. Result
 ![result1](public/result1.png)
 ![result](public/result.png)
