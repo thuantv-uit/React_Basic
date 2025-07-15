@@ -167,48 +167,12 @@ const add = (a, b) => a + b;
 
 ## 6. Form and Event
 1. In React, a **form** is a UI component used to collect user input (e.g., text, selections) via elements like <input>, <textarea>, or <select>. It manages input data using state (often with useState) and handles submission with event handlers.
-```bash
-import { useState } from 'react';
 
-function Form() {
-  const [input, setInput] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted:', input);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
-
-export default Form;
-```
 - **State** (input) tracks input value.
 - **onChange** updates state with user input.
 - **onSubmit** handles form submission, using e.preventDefault() to prevent page refresh.
 - Props can pass data or functions to customize form behavior across components.
 
 2. In React, an **event** is a user or system action (e.g., click, input change, key press) handled by event handlers in components, typically passed as props or defined in JSX using camelCase attributes (e.g., onClick, onChange).
-```bash
-import { useState } from 'react';
 
-function Button() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => setCount(count + 1); // Event handler
-
-  return (
-    <button onClick={handleClick}>Clicked {count} times</button>
-  );
-}
-```
 ![result2](public/result2.png) 
