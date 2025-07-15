@@ -166,8 +166,109 @@ const add = (a, b) => a + b;
 ```
 
 ## 6. Form and Event
-1. In React, a **form** is a UI component used to collect user input (e.g., text, selections) via elements like input, textarea, or select. It manages input data using state (often with useState) and handles submission with event handlers.      
+1. In React, a **form** is a UI component used to collect user input (e.g., text, selections) via elements like **input**, **textarea**, or **select**. It manages input data using state (often with useState) and handles submission with event handlers.
+```bash
+import { useState } from 'react';
+
+function Form() {
+  const [input, setInput] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Submitted:', input);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default Form;
+```
+- **State** (input) tracks input value.
+- **onChange** updates state with user input.
+- **onSubmit** handles form submission, using e.preventDefault() to prevent page refresh.
+Props can pass data or functions to customize form behavior across components.
 
 2. In React, an **event** is a user or system action (e.g., click, input change, key press) handled by event handlers in components, typically passed as props or defined in JSX using camelCase attributes (e.g., onClick, onChange).      
+```bash
+import { useState } from 'react';
+
+function Button() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => setCount(count + 1); // Event handler
+
+  return (
+    <button onClick={handleClick}>Clicked {count} times</button>
+  );
+}
+```
+3. Example
+```bash
+import { useState } from "react";
+
+function SearchBar(props) {
+
+    const [name, setName] = useState("");
+    const [priceMax, setPriceMax] = useState(0);
+    const [type, setType] = useState("");
+    const [brand, setBrand] = useState("");
+
+    const searchButtonPressed = () => {
+        props.callback({name: name, priceMax: priceMax, type: type, brand: brand});
+    }
+
+    return (
+        <div>
+            <h2>Search for an Item</h2>
+            <form>
+                <label htmlFor="name-field">Name: </label>
+                <input 
+                    id="name-field" 
+                    type="text"  
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                />
+                <label htmlFor="price-field">PriceMax: </label>
+                <input 
+                    id="price-field" 
+                    type="number" 
+                    value={priceMax}
+                    onChange={(e) => setPriceMax(e.target.value)} 
+                />
+                <label htmlFor="type-field">Type: </label>
+                <input 
+                    id="type-field" 
+                    type="text" 
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                />
+                <label htmlFor="brand-field">Brand: </label>
+                <input 
+                    id="brand-field" 
+                    type="text" 
+                    value={brand}
+                    onChange={(e) => setBrand(e.target.value)}
+                />
+                <button type="button" onClick={searchButtonPressed}>Search</button>
+            </form>
+            <p>Name: {name}</p>
+            <p>Price Max: {priceMax}</p>
+            <p>Type: {type}</p>
+            <p>Brand: {brand}</p>
+        </div>
+    )
+}
+
+export default SearchBar;
+```
 
 ![result2](public/result2.png) 
