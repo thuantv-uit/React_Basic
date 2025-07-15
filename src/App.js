@@ -1,30 +1,44 @@
 import "./App.css";
 import Info from "./Info";
-import PropTypes from "prop-types";
+import { useState } from "react";
 
 function App() {
   return (
     <div className="App">
       <Info />
-      <AddItem text="Thuan" number="Thuan" />
-      <AddItem text="Tran"/>
-      <AddItem />
+      <ButtonState></ButtonState>
     </div>
   );
 }
 
-function AddItem(props) {
+function ButtonState() {
+  const [title, setTitle] = useState("");
+  const [counter, setCounter] = useState(0);
+
+  const updateTitleClicked = () => {
+    setTitle("We now have a title");
+  }
+
+  const updateCounterClicked = () => {
+    setCounter(counter + 1);
+  }
+
   return (
-    <form>
-      <label for="text-form">Type something: </label>
-      <input type="text" value={props.text} id="text-form" />
-      <p>{props.number}</p>
-    </form>
+    <div>
+      <Data title={title} counter={counter}/>
+      <button onClick={updateTitleClicked}>Update Title</button>
+      <button onClick={updateCounterClicked}>Update Counter</button>
+    </div>
   );
 }
-AddItem.propTypes = {
-  number: PropTypes.number,
-  text: PropTypes.string,
-};
+
+function Data(props) {
+  return (
+    <div>
+      <p>Title: {props.title}</p>
+      <p>Count: {props.counter}</p>
+    </div>
+  )
+}
 
 export default App;

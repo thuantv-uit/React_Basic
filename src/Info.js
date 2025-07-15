@@ -14,18 +14,4 @@ class Info extends React.Component {
     }
 }
 
-
-// function Info() {
-//   const title = "Thuan Tran";
-//   const showTitle = false;
-
-//   return (
-//     <div>
-//       <h1>{showTitle ? title : "No title" }</h1>
-//       <h1>Inventory System</h1>
-//       <p>Manage you stuff</p>
-//     </div>
-//   );
-// }
-
 export default Info;

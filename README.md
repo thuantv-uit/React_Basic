@@ -105,7 +105,7 @@ import { func1 } from './utils'; // Must use exact name in braces
 4. JSX, or JavaScript XML, is a syntax extension for JavaScript that is commonly used with the React library for building user interfaces. It allows developers to write HTML-like code directly within their JavaScript files. 
 
 ## 4. Props
-1. Props in React are used to pass data from a parent component to a child component, enabling dynamic and reusable components.   
+1. **Props** in React are used to pass data from a parent component to a child component, enabling dynamic and reusable components.   
 Example:
 ```bash
 // Parent.js
@@ -131,4 +131,36 @@ Child.propTypes = {
   name: PropTypes.string.isRequired,
   age: PropTypes.number,
 };
+```
+
+## 5. State and useState
+1. **useState** is a React Hook that allows functional components to manage state by declaring a state variable and a function to update it.
+```bash
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const updateCounterClicked = () => {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={updateCounterClicked}>Update Counter</button>
+    </div>
+  );
+}
+```
+
+2. **Arrow Function** is a concise syntax for writing functions in JavaScript, introduced in ES6.
+```bash
+// Regular function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
 ```
